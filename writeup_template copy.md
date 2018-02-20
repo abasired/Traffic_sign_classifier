@@ -17,10 +17,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/all_classes.jpg “All Classes”
-[image2]: ./examples/augmented_images.jpg “Augmented data”
-[image3]: ./examples/Test_images “Test set images”
-[image4]: ./examples/ "Traffic Sign 1"
+[image1]: ./examples/visualization.jpg "Visualization"
+[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image3]: ./examples/random_noise.jpg "Random Noise"
+[image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
@@ -51,7 +51,6 @@ The data provided in the project comprises of German traffic signs.
 Here is an exploratory visualization of the Training data. 
 
 ![alt text][image9]
-![alt text][image1]
 
 ### Design and Test a Model Architecture
 
@@ -136,7 +135,6 @@ If an iterative approach was chosen:
 
 * Next I ran the model on 5 images from internet and saw an accuracy of 40%. Observed that an image corresponding to no vehicles was not being detected correctly. 
 
-![alt text][image3]
 *softmax output of five test images with labels as (14,15,12,36,4)
 INFO:tensorflow:Restoring parameters from ./lenet_more_data
 TopKV2(values=array([[  7.98735321e-01,   1.00402549e-01,   6.97058365e-02,
@@ -163,6 +161,6 @@ Noticed that the corresponding number of images in training set are lower in num
 * increased the number of epochs to further reduce variance.
 
 
-### Analysis of Model on Test images
+### Test a Model on New Images
 
 My model has a tough time recognizing harder images like pedestrians, road work. Any suggestions u are most welcome. 
