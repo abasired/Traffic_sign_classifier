@@ -155,3 +155,13 @@ Model prediction results (14,35,12,41,25)
 ### Analysis of Model on Test images
 
 My model has a tough time recognizing harder images like pedestrians, road work. Any suggestions u are most welcome. 
+
+### Interesting observations
+
+* If we observe that training error is getting worse with dropout, reduce the number of dropouts in the network. 
+
+* Equalization of image did not help much in data augmentation.
+
+* Training set seemed to be derived from data augmentation techniques to begin with. Hence test set from internet seems like a different distribution. Is this correct in your opinion?
+
+* Reorganizing some amount of data from test set could have improved our model.
