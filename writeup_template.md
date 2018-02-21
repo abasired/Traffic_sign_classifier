@@ -17,18 +17,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: examples/all_classes.png “All Classes”
-[image2]: examples/augmented_images.png “Augmented data”
-[image3]: examples/Test_images.png “Test set images”
-[image9]: examples/traffic_sings_distribution.png “Training distribution”
-[image10]: examples/preprocess_images.png “augmented data”
+[image1]: https://github.com/abasired/Traffic_sign_classifier/tree/master/examples/all_classes.png “All Classes”
+[image2]: https://github.com/abasired/Traffic_sign_classifier/tree/master/examples/augmented_images.png “Augmented data”
+[image3]: https://github.com/abasired/Traffic_sign_classifier/tree/master/examples/Test_images.png “Test set images”
+[image9]: https://github.com/abasired/Traffic_sign_classifier/tree/master/examples/traffic_sings_distribution.png “Training distribution”
+[image10]: https://github.com/abasired/Traffic_sign_classifier/tree/master/examples/preprocess_images.png “augmented data”
 
 ## Rubric Points
 
 ---
 ### Submission files
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/abasired/Traffic_sign_classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -52,21 +52,20 @@ Here is an exploratory visualization of the Training data.
 
 #### Data preparation
 
-* First step: I convert images into grayscale to remove any discrepancy due to color in original images. 
+* Convert images into grayscale to remove any discrepancy due to color in original images. 
 * Feature normalization: All the pixel intensities are normalized to have better convergence of gradient decent algorithm.  
 * Data augmentation : Added additional data as the distribution of images in training set is not completely uniform. 
-    ** Image translation 
-    ** image rotation 
-    ** Gaussian filter 
-    ** Bluring image
+    1. Image translation 
+    2. image rotation 
+    3. Gaussian filter 
+    4. Blurring image
 
-The sample images after data augmentation as follows:
+The sample images after data augmentation are as follows:
 
 ![alt text][image10]
 
 #### Model architecture and hyper-parameter info
-I used a standard Lenet architecture. 
-My final model consisted of the following layers:
+I used a standard Lenet architecture. Final model consisted of the following layers:
 
 | Layer         			|     Description	        						| 
 |:---------------------:	|:---------------------------------------------:	| 
@@ -111,18 +110,16 @@ My final model consisted of the following layers:
 	2. Use dropout technique to reduce variance
 	3. Increase number of epochs.
 
- 4. Problem approach details:
-
 My final model results were:
 * training set accuracy of 0.991
 * validation set accuracy of 0.944
 * test set accuracy of 0.915
 
-If an iterative approach was chosen:
+Detailed approach:
 * Initially used a LeNet CNN on training data. With 10 Epochs, and learning rate = 0.001. Converted raw data into gray scale image and normalized training data.
    * Training error = 0.992
    * Validation error = 0.902
-* I observed the images in the training set and found few of the images hard to recognize. Hence was satisfied by the Training error.
+* Looking at the training set, training error seemed satisfactory compared to human recognition.
 * Focused on the problem of overfitting. 
    * Firstly, used Dropout with 0.5 probability for each node .(By keeping rest of the parameters same)
    * Training Accuracy = 0.980
@@ -150,13 +147,24 @@ TopKV2(values=array([[  7.98735321e-01,   1.00402549e-01,   6.97058365e-02,
        [41, 32, 36, 20, 28],
        [25,  8, 39,  4,  7]], dtype=int32))
 
+| label of traffic sign      	|     softmax	        									| prediction -- based on softmax
+|:---------------------:	|:---------------------------------------------:						| :---------------------------------------------:
+| 14         			| 7.98735321e-01,   1.00402549e-01,   6.97058365e-02, 8.34206026e-03,   5.77890780e-03] 	| [14, 13, 15, 33, 39]
+| 15         			| 8.30667198e-01,   7.19514564e-02,   6.70547485e-02, 2.44841129e-02,   5.68909571e-03		| [35,  3, 13, 34, 15]
+| 12         			| 9.94002640e-01,   1.26411638e-03,   1.18246512e-03, 7.61133444e-04,   5.43891161e-04] 	| [12, 33, 40,  9, 38]
+| 36         			| 7.28698611e-01,   2.10569084e-01,   4.26086113e-02, 1.05189132e-02,   7.00206682e-03		| [41, 32, 36, 20, 28]
+| 4         			| 6.32534981e-01,   2.14114100e-01,   7.33823031e-02, 1.84143130e-02,   9.91379377e-03] 	| [25,  8, 39,  4,  7]
+
+ 
+
+
 Model prediction results (14,35,12,41,25)
 
-Noticed that the corresponding number of images in training set are lower in number. Hence, decided to add more data so that final distribution of data in training set has certain minimum number of samples for each classes. 
+* Noticed that the corresponding number of images in training set are lower in number. Hence, decided to add more data so that final distribution of data in training set has certain minimum number of samples for each classes. 
 
 * reran the model with more data. However, I was also thinking that this could further reduce our variance problem as the amount of training data is increasing.
 
-* increased the number of epochs to further reduce variance.
+* Also increased the number of epochs to further reduce variance.
 
 
 ### Analysis of Model on Test images
