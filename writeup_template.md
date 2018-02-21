@@ -149,6 +149,8 @@ Model prediction results (14,35,12,41,25)
 
 * Also increased the number of epochs to further reduce variance.
 
+* This improved the accuracy to 80%.
+
 
 ### Analysis of Model on Test images
 
