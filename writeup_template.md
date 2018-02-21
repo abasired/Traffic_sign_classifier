@@ -17,14 +17,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/all_classes.jpg “All Classes”
-[image2]: ./examples/augmented_images.jpg “Augmented data”
-[image3]: ./examples/Test_images “Test set images”
-[image4]: ./examples/ "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./examples/all_classes.png “All Classes”
+[image2]: ./examples/augmented_images.png “Augmented data”
+[image3]: ./examples/Test_images.png “Test set images”
 [image9]: ./examples/traffic_sings_distribution.png “Training distribution”
 [image10]: ./examples/preprocess_images.png “augmented data”
 
@@ -97,7 +92,7 @@ My final model consisted of the following layers:
 ##### Hyper-Parameter
 * Epochs = 30
 * Batch_size = 128
-* Rate = 0.00075
+* Rate = 0.001
 * mean of initial random weights = 0
 * Variance of initial random weights = 0.1
 * Optimizer : Adam optimizer
@@ -119,9 +114,9 @@ My final model consisted of the following layers:
  4. Problem approach details:
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.991
+* validation set accuracy of 0.944
+* test set accuracy of 0.915
 
 If an iterative approach was chosen:
 * Initially used a LeNet CNN on training data. With 10 Epochs, and learning rate = 0.001. Converted raw data into gray scale image and normalized training data.
@@ -137,6 +132,7 @@ If an iterative approach was chosen:
 * Next I ran the model on 5 images from internet and saw an accuracy of 40%. Observed that an image corresponding to no vehicles was not being detected correctly. 
 
 ![alt text][image3]
+
 *softmax output of five test images with labels as (14,15,12,36,4)
 INFO:tensorflow:Restoring parameters from ./lenet_more_data
 TopKV2(values=array([[  7.98735321e-01,   1.00402549e-01,   6.97058365e-02,
