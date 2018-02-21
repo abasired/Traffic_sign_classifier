@@ -17,11 +17,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/all_classes.png “All Classes”
-[image2]: ./examples/augmented_images.png “Augmented data”
-[image3]: ./examples/Test_images.png “Test set images”
-[image9]: ./examples/traffic_sings_distribution.png “Training distribution”
-[image10]: ./examples/preprocess_images.png “augmented data”
+[image1]: examples/all_classes.png “All Classes”
+[image2]: examples/augmented_images.png “Augmented data”
+[image3]: examples/Test_images.png “Test set images”
+[image9]: examples/traffic_sings_distribution.png “Training distribution”
+[image10]: examples/preprocess_images.png “augmented data”
 
 ## Rubric Points
 
