@@ -119,33 +119,16 @@ Detailed approach:
 * Initially used a LeNet CNN on training data. With 10 Epochs, and learning rate = 0.001. Converted raw data into gray scale image and normalized training data.
    * Training error = 0.992
    * Validation error = 0.902
-* Looking at the training set, training error seemed satisfactory compared to human recognition.
 * Focused on the problem of overfitting. 
    * Firstly, used Dropout with 0.5 probability for each node .(By keeping rest of the parameters same)
    * Training Accuracy = 0.980
    * Validation Accuracy = 0.947
    * Test accuracy  = 0.925
 
-* Next I ran the model on 5 images from internet and saw an accuracy of 40%. Observed that an image corresponding to no vehicles was not being detected correctly. 
+* Next I ran the model on 5 images from internet and saw an accuracy of 40%. Observed that an image corresponding to no vehicles(label-15) was not being detected correctly. 
 
 ![alt text][image3]
 
-*softmax output of five test images with labels as (14,15,12,36,4)
-INFO:tensorflow:Restoring parameters from ./lenet_more_data
-TopKV2(values=array([[  7.98735321e-01,   1.00402549e-01,   6.97058365e-02,
-          8.34206026e-03,   5.77890780e-03],
-       [  8.30667198e-01,   7.19514564e-02,   6.70547485e-02,
-          2.44841129e-02,   5.68909571e-03],
-       [  9.94002640e-01,   1.26411638e-03,   1.18246512e-03,
-          7.61133444e-04,   5.43891161e-04],
-       [  7.28698611e-01,   2.10569084e-01,   4.26086113e-02,
-          1.05189132e-02,   7.00206682e-03],
-       [  6.32534981e-01,   2.14114100e-01,   7.33823031e-02,
-          1.84143130e-02,   9.91379377e-03]], dtype=float32), indices=array([[14, 13, 15, 33, 39],
-       [35,  3, 13, 34, 15],
-       [12, 33, 40,  9, 38],
-       [41, 32, 36, 20, 28],
-       [25,  8, 39,  4,  7]], dtype=int32))
 
 | label of traffic sign      	|     softmax	        									| prediction -- based on softmax
 |:---------------------:	|:---------------------------------------------:						| :---------------------------------------------:
